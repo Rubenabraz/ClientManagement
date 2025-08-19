@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.CreateClient" Title="Novo Cliente" BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            
+            <Label Text="Registar Cliente" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222" />
+
+            <!-- Nome -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Nome" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Entry x:Name="NameEntry" Placeholder="Insira o nome" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Apelido -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Apelido" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Entry x:Name="SurnameEntry" Placeholder="Insira o apelido" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Email -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Email" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Entry x:Name="EmailEntry" Placeholder="Insira o email" Keyboard="Email" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Telemóvel -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Telemóvel" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Entry x:Name="PhoneEntry" Placeholder="Insira o telemóvel" Keyboard="Telephone" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Género -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Género" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Picker x:Name="GenderPicker" Title="Selecione o género" FontSize="16" BackgroundColor="White" HeightRequest="45">
+                        <Picker.Items>
+                            <x:String>Masculino</x:String>
+                            <x:String>Feminino</x:String>
+                            <x:String>Outro</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botão Guardar -->
+            
+            <Button Text="Guardar Cliente" FontSize="18" CornerRadius="12" BackgroundColor="#34C759" TextColor="White" HeightRequest="50" Clicked="OnSaveClientClicked" Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

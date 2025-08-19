@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.UpdateClient" Title="Atualizar Cliente" BackgroundColor="White">
+
+    <ScrollView>
+        
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            
+            <Label Text="Editar Cliente" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222" />
+
+            <!-- Nome -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Nome" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="NameEntry" Placeholder="Nome" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45" />
+                       
+            </VerticalStackLayout>
+
+            <!-- Apelido -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Apelido" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="SurnameEntry" Placeholder="Apelido" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Email -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Email" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="EmailEntry" Placeholder="exemplo@email.com" Keyboard="Email" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Telemóvel -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Telemóvel" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="PhoneEntry" Placeholder="912 345 678" Keyboard="Telephone" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Género -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Género" FontSize="16" TextColor="#444" />
+                
+                <Picker x:Name="GenderPicker" Title="Selecione o género" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                        <x:String>Outro</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+
+            <!-- Botão -->
+
+            <Button x:Name="UpdateButton" Text="Atualizar Cliente" FontSize="18" CornerRadius="12" TextColor="White" HeightRequest="55" Clicked="OnUpdateClientClicked" Margin="0,20,0,0" Shadow="{Shadow Brush=Black, Opacity=0.4, Radius=8, Offset='2,2'}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF0050" Offset="0.0"/>
+                        <GradientStop Color="#00F2EA" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button Text="Apagar Cliente" FontSize="18" CornerRadius="12" BackgroundColor="Aqua" TextColor="White" HeightRequest="50" Clicked="OnDeleteClientClicked" Margin="0,20,0,0"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.DeletedClients" Title="Clientes Removidos" BackgroundColor="White">
+
+    <VerticalStackLayout Padding="15" Spacing="15">
+
+        <!-- Lista de clientes removidos -->
+        
+        <CollectionView  x:Name="DeletedClientsListView" SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="15" Margin="5" BorderColor="#ddd" CornerRadius="12" HasShadow="True" BackgroundColor="#fafafa">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <HorizontalStackLayout Spacing="5">
+                                
+                                <Label Text="Nome:" FontAttributes="Bold" FontSize="16" TextColor="#222" />
+                                
+                                <Label Text="{Binding cltName}" FontSize="16" TextColor="#333" />
+                                
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                
+                                <Label Text="Email:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                
+                                <Label Text="{Binding cltEmail}" FontSize="14" TextColor="#666" />
+                                
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                
+                                <Label Text="Atualizado por:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                
+                                <Label Text="{Binding cltUpdatedUser}" FontSize="14" TextColor="#666" />
+                                
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                
+                                <Label Text="Data de exclusao" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                
+                                <Label Text="{Binding cltUpdatedDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="#666" />
+                                
+                            </HorizontalStackLayout>
+
+                            <Label Text="(Cliente apagado)" FontSize="12" TextColor="Red" FontAttributes="Italic" HorizontalOptions="End" />
+
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.CreateOrder" Title="Novo Pedido" BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            
+            <Label Text="Criar Novo Pedido" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222" />
+
+            <!-- Cliente ID -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="ID do Cliente"  FontSize="16"  FontAttributes="Bold"  TextColor="#444"/>
+                    
+                    <Entry x:Name="OrderClientIdEntry" Placeholder="Insira o ID do cliente" Keyboard="Numeric" FontSize="16" BackgroundColor="White" HeightRequest="45" TextChanged="OnClientIdChanged"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Nome do Cliente (só leitura) -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Nome do Cliente"  FontSize="16"  FontAttributes="Bold" TextColor="#444"/>
+                    
+                    <Entry x:Name="OrderClientNameEntry" Placeholder="Será preenchido automaticamente" IsReadOnly="True" FontSize="16" BackgroundColor="#eee" TextColor="#666" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Nome do Pedido -->
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Nome do Pedido"  FontSize="16"  FontAttributes="Bold"  TextColor="#444"/>
+                    
+                    <Entry x:Name="OrderNameEntry" Placeholder="Nome do pedido" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Valor Total -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Valor Total (€)"  FontSize="16"  FontAttributes="Bold"  TextColor="#444"/>
+                    
+                    <Entry x:Name="OrderTotalAmountEntry" Placeholder="0,00" Keyboard="Numeric" FontSize="16" BackgroundColor="White" HeightRequest="45"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Descrição -->
+            
+            <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+                
+                <VerticalStackLayout Spacing="5">
+                    
+                    <Label Text="Descrição"  FontSize="16"  FontAttributes="Bold"  TextColor="#444"/>
+                    
+                    
+                    <Editor x:Name="OrderDescriptionEntry" Placeholder="Detalhes do pedido" FontSize="16" BackgroundColor="White" AutoSize="TextChanges" HeightRequest="100"/>
+                    
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botão Criar -->
+            <Button Text="Criar Pedido" FontSize="18" CornerRadius="12" BackgroundColor="#34C759" TextColor="White" HeightRequest="50" Clicked="OnSaveOrderClicked" Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

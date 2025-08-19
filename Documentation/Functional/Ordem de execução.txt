@@ -1,0 +1,25 @@
+---------##------------------------------------------------------------------------------------
+
+Ficheiro de auxilio para execução das querys para criar a base de dados.
+
+---------1-------------------------------------------------------------------------------------
+
+* Executar a query que está dentro do folder "DataBase", denominado por "Database".
+
+---------2-------------------------------------------------------------------------------------
+
+* Executar a query que está dentro do folder "Tables", denominado por "tClients".
+
+* Executar a outra query, que está dentro do mesmo folder, denominada por "tOrders"
+
+---------3--------------------------------------------------------------------------------------
+
+* Executar a query que está dentro do folder "StoredProcedure", denominado por "sp_ClientSave".
+
+* Executar outra query, que está dentro do mesmo folder, denominada por "sp_ClientDelete".
+
+* Executar outra query, que está dentro do mesmo folder, denominada por "sp_OrderSave".
+
+* Executar outra query, que está dentro do mesmo folder, denominada por "sp_OrderDelete".
+
+--------------------------------------------------------------------------------------------------

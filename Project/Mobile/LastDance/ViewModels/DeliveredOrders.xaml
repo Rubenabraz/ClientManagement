@@ -1,0 +1,62 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LastDance.ViewModels.DeliveredOrders"
+             Title="Encomendas Entregues"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="15" Spacing="15">
+
+        <!-- Lista de encomendas entregues -->
+        <CollectionView x:Name="DeliveredOrdersListView" ItemsSource="{Binding DeliveredOrdersList}" SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="15" Margin="5" BorderColor="#ddd" CornerRadius="12" HasShadow="True" BackgroundColor="#fafafa">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="ID da Encomenda:" FontAttributes="Bold" FontSize="16" TextColor="#222" />
+                                <Label Text="{Binding ordId}" FontSize="16" TextColor="#333" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Nome do cliente:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ClientName}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Nome:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ordName}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Descrição:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ordDescription}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Status:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ordStatus}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Preco:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ordTotalAmount}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="5">
+                                <Label Text="Data da ultima atualizacao:" FontAttributes="Bold" FontSize="14" TextColor="#555" />
+                                <Label Text="{Binding ordUpdatedDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="#666" />
+                            </HorizontalStackLayout>
+
+                            <Label Text="(Encomenda entregue)" FontSize="12" TextColor="Green" FontAttributes="Italic" HorizontalOptions="End" />
+
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

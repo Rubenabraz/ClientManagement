@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.UpdateOrder" Title="Atualizar Pedido" BackgroundColor="White">
+
+    <ScrollView>
+        
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Título -->
+            
+            <Label Text="Editar Pedido" FontSize="28" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222" />
+
+            <!-- Nome do Pedido -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Nome" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="OrderNameEntry" Placeholder="Nome do pedido" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Total Amount (só leitura) -->
+            
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Total" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="OrderTotalAmountEntry" IsReadOnly="True" BackgroundColor="#E0E0E0" FontSize="16" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Status do Pedido (só leitura, muda com checkbox) -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Status" FontSize="16" TextColor="#444" />
+                
+                <Entry x:Name="OrderStatusEntry" IsReadOnly="True" BackgroundColor="#E0E0E0" FontSize="16" HeightRequest="45" />
+                
+            </VerticalStackLayout>
+
+            <!-- Descrição do Pedido -->
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="Descrição" FontSize="16" TextColor="#444" />
+                
+                <Editor x:Name="OrderDescriptionEntry" Placeholder="Descrição do pedido" FontSize="16" BackgroundColor="#F5F5F5" HeightRequest="100" />
+                
+            </VerticalStackLayout>
+
+            <!-- Entregue (checkbox) -->
+            
+            <HorizontalStackLayout Spacing="8" VerticalOptions="Start" Padding="5,0">
+                
+                <CheckBox x:Name="OrderDeliveredEntry" VerticalOptions="Center" CheckedChanged="OrderDeliveredEntry_CheckedChanged"/>
+                
+                <Label Text="Entregue" VerticalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                
+            </HorizontalStackLayout>
+
+            <!-- Botão Atualizar Pedido -->
+
+            <Button x:Name="UpdateButton" Text="Atualizar Pedido" FontSize="18" CornerRadius="28" TextColor="White" HeightRequest="55" Clicked="onUpdateOrderClicked" Margin="0,20,0,0" Shadow="{Shadow Brush=Black, Opacity=0.4, Radius=8, Offset='2,2'}" IsVisible="False">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FF0050" Offset="0.0"/>
+                        <GradientStop Color="#00F2EA" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <!-- Botão Remover Pedido -->
+            
+            <Button Text="Remover Pedido" FontSize="18" CornerRadius="12" BackgroundColor="Aqua" TextColor="White" HeightRequest="50" Clicked="OnDeleteOrderClicked" Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

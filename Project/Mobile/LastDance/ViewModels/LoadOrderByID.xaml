@@ -1,0 +1,125 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="LastDance.ViewModels.LoadOrderByID" Title="Consultar Pedido por ID" BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Cliente ID + Botão -->
+        <Frame Padding="10" BorderColor="#ddd" CornerRadius="12" BackgroundColor="#fafafa">
+            
+            <VerticalStackLayout Spacing="5">
+                
+                <Label Text="ID do pedido" FontSize="16" FontAttributes="Bold" TextColor="#444"/>
+                
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                    
+                    <!-- Entry expande -->
+
+                    <Entry x:Name="orderIdEntry" Placeholder="Insira o ID da encomenda" Keyboard="Numeric" FontSize="16" BackgroundColor="White" HeightRequest="45" Grid.Column="0"/>
+                    
+                    <!-- Botão encostado à direita -->
+                    
+                    <Button Text="🔍" WidthRequest="50" HeightRequest="45" BackgroundColor="#007AFF" CornerRadius="8" TextColor="White" FontAttributes="Bold" Grid.Column="1" Clicked="GetOrderById"/>
+                    
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Detalhes do Pedido -->
+
+        <Frame Padding="15" CornerRadius="12" BorderColor="#ddd" HasShadow="True" BackgroundColor="#fafafa">
+
+            <VerticalStackLayout Spacing="12" BindableLayout.ItemsSource="{Binding .}">
+
+                <!-- Cliente -->
+
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Cliente:" FontAttributes="Bold" FontSize="16" TextColor="#222"/>
+
+                    <Label Text="{Binding ClientName}" FontSize="16" TextColor="#333"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Nome -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Nome:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordName}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Status -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Status:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordStatus}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Descricao -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Descrição:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordDescription}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Descricao -->
+
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Preco:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordTotalAmount}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Criado por -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Criado por:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordCreatedUser}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Data de criacao -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Data de criação:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordCreatedDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Atualizador por -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Atualizado por:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordUpdatedUser, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+                <!-- Data da ultima atualizacao -->
+                
+                <HorizontalStackLayout Spacing="6">
+
+                    <Label Text="Data da ultima atualizacao:" FontAttributes="Bold" FontSize="14" TextColor="#555"/>
+
+                    <Label Text="{Binding ordUpdatedDate, StringFormat='{0:dd/MM/yyyy HH:mm}'}" FontSize="14" TextColor="#666"/>
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
